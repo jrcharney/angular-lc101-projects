@@ -3,7 +3,16 @@ h3 {
 }
 
 img {
-
+  --thumb-size: 200px;  /* Defines the thumbnail size */
+  /* display:block; */
+  /* To keep the size of the image proportional,
+   * set the max limits and define the size as auto.
+   * https://stackoverflow.com/questions/12991351/css-force-image-resize-and-keep-aspect-ratio
+   */
+  max-width: var(--thumb-size);
+  max-height: var(--thumb-size);
+  width: auto;
+  height: auto;
 }
 
 .photos {
