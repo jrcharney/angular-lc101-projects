@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
    selector: 'movie-list',
@@ -11,5 +12,24 @@ export class MovieListComponent implements OnInit {
    constructor() { }
 
    ngOnInit() {
+   }
+
+   addMovie(newTitle : string){
+     /*
+     if(newTitle !== '' && !this.movies.includes(newTitle)){
+      this.movies.push(newTitle);
+     }
+     */
+     let errorMsg = "";
+     if(newTitle === ""){
+       errorMsg = "Please enter a movie title";
+     }
+     else if(this.movies.includes(newTitle)){
+       errorMsg = `${newTitle} is already in your movie list.`;
+     }
+     else{
+       this.movies.push(newTitle);
+     }
+     return errorMsg;   // TODO: What if we used a try-catch block?
    }
 }
