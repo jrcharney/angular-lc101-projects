@@ -18,3 +18,8 @@ img {
 .crew {
     color: #3c79b8;
 }
+
+/* TODO: only do this if a list item has a click event */
+.candidates ol > li {
+  cursor: pointer;
+}
